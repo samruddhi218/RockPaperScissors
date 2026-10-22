@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rock Paper Scissors</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="game">
+    <header class="header">
+      <p class="eyebrow">A tiny classic game</p>
+      <h1>Rock <span>Paper</span> Scissors</h1>
+      <p class="subtitle">Choose your move and see who wins!</p>
+    </header>
+
+    <section class="mode-panel" aria-label="Choose game mode">
+      <span class="mode-label">PLAY AGAINST</span>
+      <div class="mode-switch">
+        <button class="mode-button active" id="computerMode" type="button">Computer</button>
+        <button class="mode-button" id="humanMode" type="button">Another human</button>
+      </div>
+    </section>
+
+    <section class="scoreboard" aria-label="Score">
+      <div class="score-card">
+        <span class="score-name" id="leftPlayerName">YOU</span>
+        <strong id="playerScore">0</strong>
+      </div>
+      <div class="versus">VS</div>
+      <div class="score-card">
+        <span class="score-name" id="rightPlayerName">COMPUTER</span>
+        <strong id="opponentScore">0</strong>
+      </div>
+    </section>
+
+    <section class="play-area">
+      <h2 id="prompt">Make your move</h2>
+      <p class="helper" id="helperText">Pick one of the three options below.</p>
+
+      <div class="choices">
+        <button class="choice" data-choice="rock" type="button" aria-label="Choose rock">
+          <img class="choice-image" src="images/rock.svg" alt="Rock hand sign" />
+          <span>Rock</span>
+        </button>
+        <button class="choice" data-choice="paper" type="button" aria-label="Choose paper">
+          <img class="choice-image" src="images/paper.svg" alt="Paper hand sign" />
+          <span>Paper</span>
+        </button>
+        <button class="choice" data-choice="scissors" type="button" aria-label="Choose scissors">
+          <img class="choice-image" src="images/scissors.svg" alt="Scissors hand sign" />
+          <span>Scissors</span>
+        </button>
+      </div>
+
+      <div class="round-result" aria-live="polite">
+        <div class="picked">
+          <span class="picked-label" id="leftPickedLabel">YOUR PICK</span>
+          <span class="picked-name" id="leftPickedName">—</span>
+        </div>
+        <div class="result-message" id="resultMessage">Ready?</div>
+        <div class="picked">
+          <span class="picked-label" id="rightPickedLabel">COMPUTER PICK</span>
+          <span class="picked-name" id="rightPickedName">—</span>
+        </div>
+      </div>
+
+      <button class="reset-button" id="resetButton" type="button">↻ Reset score</button>
+      <p class="note">Scores are only kept while this page is open. Refreshing resets them.</p>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
